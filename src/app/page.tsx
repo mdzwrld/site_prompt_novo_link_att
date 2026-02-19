@@ -12,8 +12,8 @@ export default function Home() {
         <Hero />
         <VSL />
         <Comparison />
-        <Packs />
         <Benefits />
+        <Packs />
         <FinalCTA />
       </main>
       <footer className="w-full py-12 border-t text-center text-sm text-muted-foreground">
