@@ -24,7 +24,8 @@ const packs = [
       "Visual cinematográfico",
       "Ideal para marketing e branding"
     ],
-    price: "R$12,90"
+    price: "R$12,90",
+    checkoutUrl: "https://ambienteseguro.org.ua/c/02cfd3da8d"
   },
   {
     title: "+100 Prompts Foto Influencer Feminina",
@@ -36,7 +37,8 @@ const packs = [
       "Gere imagens com seu próprio rosto",
       "Estilo realista e profissional"
     ],
-    price: "R$10,90"
+    price: "R$10,90",
+    checkoutUrl: "#"
   },
   {
     title: "+240 Prompts Ensaio de Bebês",
@@ -48,7 +50,8 @@ const packs = [
       "Cenários criativos e delicados",
       "Ideal para fotógrafos"
     ],
-    price: "R$9,90"
+    price: "R$9,90",
+    checkoutUrl: "#"
   }
 ];
 
@@ -153,8 +156,14 @@ function PackCard({ pack, index }: { pack: typeof packs[0], index: number }) {
           <div className="text-2xl font-black text-primary">{pack.price}</div>
           <div className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">pagamento único</div>
         </div>
-        <Button className="w-full h-12 rounded-full font-bold text-base shadow-lg shadow-primary/20 hover:scale-105 transition-transform" variant="default">
-          QUERO ACESSAR AGORA
+        <Button 
+          asChild
+          className="w-full h-12 rounded-full font-bold text-base shadow-lg shadow-primary/20 hover:scale-105 transition-transform" 
+          variant="default"
+        >
+          <a href={pack.checkoutUrl}>
+            QUERO ACESSAR AGORA
+          </a>
         </Button>
       </CardFooter>
     </Card>
