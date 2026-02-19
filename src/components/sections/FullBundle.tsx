@@ -4,11 +4,8 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Button } from '@/components/ui/button';
 import { Check, Sparkles } from 'lucide-react';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function FullBundle() {
-  const bannerImage = PlaceHolderImages.find(img => img.id === 'full-bundle-banner');
-
   return (
     <section className="py-4 md:py-10 max-w-4xl mx-auto px-4">
       <Card className="relative overflow-hidden border-4 border-primary shadow-2xl bg-gradient-to-br from-white to-primary/5">
@@ -25,17 +22,15 @@ export function FullBundle() {
             Leve todos os nossos packs por um preço especial.
           </p>
           
-          {bannerImage && (
-            <div className="relative w-full aspect-video md:aspect-[2/1] rounded-xl overflow-hidden border-2 border-primary/20 shadow-lg mt-4">
-              <Image
-                src="https://i.imgur.com/Km3dJhc.jpeg"
-                alt="Combo Completo Banner"
-                fill
-                className="object-cover"
-                unoptimized
-              />
-            </div>
-          )}
+          <div className="relative w-full aspect-video md:aspect-[2/1] rounded-xl overflow-hidden border-2 border-primary/20 shadow-lg mt-4">
+            <Image
+              src="https://i.imgur.com/Km3dJhc.jpeg"
+              alt="Combo Completo Banner"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+          </div>
         </CardHeader>
 
         <CardContent className="space-y-6">
@@ -63,8 +58,8 @@ export function FullBundle() {
         </CardContent>
 
         <CardFooter className="pb-10 px-6 md:px-12">
-          <Button className="w-full h-16 md:h-20 rounded-full font-black text-xl md:text-2xl shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all bg-primary hover:bg-primary/90 text-white group">
-            LIBERAR TODOS OS PROMPTS AGORA
+          <Button className="w-full h-16 md:h-20 rounded-full font-black text-xl md:text-2xl shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all bg-primary hover:bg-primary/90 text-white group uppercase">
+            QUERO TODOS OS PROMPTS
           </Button>
         </CardFooter>
       </Card>

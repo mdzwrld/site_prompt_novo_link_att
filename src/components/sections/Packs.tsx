@@ -9,8 +9,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import * as React from "react";
 import { type CarouselApi } from "@/components/ui/carousel";
@@ -24,7 +22,6 @@ const packs = [
       "+300 prompts premium",
       "Estilo luxo e ostentação",
       "Visual cinematográfico",
-      "Transformação profissional",
       "Ideal para marketing e branding"
     ],
     price: "R$12,90"
@@ -37,8 +34,7 @@ const packs = [
       "+100 prompts exclusivos",
       "Fotos de viagens, festas e ensaios",
       "Gere imagens com seu próprio rosto",
-      "Estilo realista e profissional",
-      "Ideal para redes sociais"
+      "Estilo realista e profissional"
     ],
     price: "R$10,90"
   },
@@ -50,7 +46,6 @@ const packs = [
       "+240 prompts prontos",
       "Ensaios newborn realistas",
       "Cenários criativos e delicados",
-      "Fotos profissionais",
       "Ideal para fotógrafos"
     ],
     price: "R$9,90"
@@ -70,14 +65,14 @@ export function Packs() {
   }, [api]);
 
   return (
-    <section id="packs" className="space-y-6 md:space-y-12 py-6 md:py-12 scroll-mt-24">
-      <div className="text-center space-y-2">
-        <h2 className="text-3xl md:text-5xl font-bold font-headline">Escolha seu pack</h2>
-        <p className="text-lg text-muted-foreground">O acesso que vai mudar sua presença digital.</p>
+    <section id="packs" className="space-y-4 md:space-y-10 py-4 md:py-10 scroll-mt-24">
+      <div className="text-center space-y-1">
+        <h2 className="text-2xl md:text-5xl font-bold font-headline">Escolha seu pack</h2>
+        <p className="text-sm md:text-lg text-muted-foreground">O acesso que vai mudar sua presença digital.</p>
       </div>
 
       {/* Desktop View: Grid */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
         {packs.map((pack, index) => (
           <PackCard key={index} pack={pack} index={index} />
         ))}
@@ -104,13 +99,13 @@ export function Packs() {
             ))}
           </CarouselContent>
           
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-2 mt-4">
             {packs.map((_, index) => (
               <button
                 key={index}
                 onClick={() => api?.scrollTo(index)}
-                className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                  current === index ? "bg-primary w-8" : "bg-primary/20"
+                className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${
+                  current === index ? "bg-primary w-6" : "bg-primary/20"
                 }`}
                 aria-label={`Ir para pack ${index + 1}`}
               />
@@ -125,7 +120,7 @@ export function Packs() {
 function PackCard({ pack, index }: { pack: typeof packs[0], index: number }) {
   return (
     <Card className="group overflow-hidden border border-primary/10 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full flex flex-col">
-      <div className="relative h-64 w-full overflow-hidden">
+      <div className="relative h-56 w-full overflow-hidden">
         <Image
           src={pack.image.imageUrl}
           alt={pack.title}
