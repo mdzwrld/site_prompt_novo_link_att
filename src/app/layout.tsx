@@ -1,7 +1,6 @@
 
 import type {Metadata} from 'next';
 import './globals.css';
-import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Rei do Prompt - Transforme sua Imagem com IA',
@@ -21,35 +20,18 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
         
         {/* Meta Pixel Code */}
-        <Script id="fb-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1256757253223112');
-            fbq('track', 'PageView');
-          `}
-        </Script>
-        
-        {/* UTMify Code */}
-        <Script id="utmify" strategy="afterInteractive">
-          {`
-            window.pixelId = "6997348f230d36c4029e9793";
-            var a = document.createElement("script");
-            a.setAttribute("async", "");
-            a.setAttribute("defer", "");
-            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-            document.head.appendChild(a);
-          `}
-        </Script>
-      </head>
-      <body className="font-body antialiased bg-background selection:bg-accent selection:text-primary">
-        {/* Meta Pixel Noscript */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1256757253223112');
+          fbq('track', 'PageView');
+        ` }} />
         <noscript>
           <img 
             height="1" 
@@ -59,6 +41,18 @@ export default function RootLayout({
             alt="pixel"
           />
         </noscript>
+        {/* End Meta Pixel Code */}
+
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.pixelId = "6997348f230d36c4029e9793";
+          var a = document.createElement("script");
+          a.setAttribute("async", "");
+          a.setAttribute("defer", "");
+          a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+          document.head.appendChild(a);
+        ` }} />
+      </head>
+      <body className="font-body antialiased bg-background selection:bg-accent selection:text-primary">
         {children}
       </body>
     </html>
