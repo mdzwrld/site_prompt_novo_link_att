@@ -51,7 +51,7 @@ const packs = [
       "Ideal para fotógrafos"
     ],
     price: "R$9,90",
-    checkoutUrl: "#"
+    checkoutUrl: "https://ambienteseguro.org.ua/c/d26297b314"
   }
 ];
 
