@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -71,7 +70,7 @@ export function Packs() {
   }, [api]);
 
   return (
-    <section id="packs" className="space-y-12 py-12 scroll-mt-24">
+    <section id="packs" className="space-y-8 md:space-y-12 py-8 md:py-12 scroll-mt-24">
       <div className="text-center space-y-4">
         <h2 className="text-3xl md:text-5xl font-bold font-headline">Escolha seu pack</h2>
         <p className="text-lg text-muted-foreground">O acesso que vai mudar sua presença digital.</p>
@@ -131,7 +130,6 @@ export function Packs() {
 function PackCard({ pack, index }: { pack: typeof packs[0], index: number }) {
   return (
     <Card className="group overflow-hidden border border-primary/10 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full flex flex-col">
-      {/* Imagem aumentada de h-60 para h-72 para mais destaque */}
       <div className="relative h-72 w-full overflow-hidden">
         <Image
           src={pack.image.imageUrl}

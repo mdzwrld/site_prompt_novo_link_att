@@ -18,7 +18,7 @@ const comparisons = [
 
 export function Comparison() {
   return (
-    <section id="comparisons" className="space-y-16 py-12 scroll-mt-24">
+    <section id="comparisons" className="space-y-8 md:space-y-16 py-8 md:py-12 scroll-mt-24">
       <div className="text-center space-y-4 px-4">
         <h2 className="text-3xl md:text-5xl font-bold font-headline text-primary">A percepção muda tudo</h2>
         <p className="text-lg text-muted-foreground">Veja o impacto real dos nossos prompts exclusivos em resultados reais.</p>
