@@ -6,25 +6,53 @@ import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const packs = [
   {
-    title: "Pack Ostentação",
-    description: "Imagens de luxo, carros, viagens e estilo de vida alto padrão.",
-    image: PlaceHolderImages.find(img => img.id === 'pack-ostentacao')!,
-    features: ["+50 prompts de luxo", "Cenários de iates e jatos", "Foco em status e poder"]
-  },
-  {
-    title: "Pack Ensaio de Bebê",
-    description: "Fotos delicadas, emocionantes e profissionais para eternizar momentos.",
-    image: PlaceHolderImages.find(img => img.id === 'pack-baby')!,
-    features: ["Iluminação suave", "Cenários lúdicos", "Qualidade de estúdio profissional"]
-  },
-  {
-    title: "Pack Influenciadora",
-    description: "Imagens modernas, estéticas e de alto impacto para redes sociais.",
+    title: "+100 Prompts Foto Influencer Feminina",
+    description: "Gere fotos de Influencer com seu rosto! Viagens, festas, ensaios e muito mais!",
     image: PlaceHolderImages.find(img => img.id === 'pack-influencer')!,
-    features: ["Estética de Instagram", "Street style premium", "Presets de cores vibrantes"]
+    features: [
+      "+100 prompts exclusivos",
+      "Fotos de viagens, festas e ensaios",
+      "Gere imagens com seu próprio rosto",
+      "Estilo realista e profissional",
+      "Ideal para redes sociais"
+    ],
+    price: "R$12,90"
+  },
+  {
+    title: "+240 Prompts Ensaio de Bebês",
+    description: "Crie ensaios newborn delicados e emocionantes com inteligência artificial.",
+    image: PlaceHolderImages.find(img => img.id === 'pack-baby')!,
+    features: [
+      "+240 prompts prontos",
+      "Ensaios newborn realistas",
+      "Cenários criativos e delicados",
+      "Fotos profissionais",
+      "Ideal para fotógrafos"
+    ],
+    price: "R$12,90"
+  },
+  {
+    title: "+300 Prompts Imagens Ostentação",
+    description: "Transforme suas fotos comuns em imagens de alto impacto usando inteligência artificial.",
+    image: PlaceHolderImages.find(img => img.id === 'pack-ostentacao')!,
+    features: [
+      "+300 prompts premium",
+      "Estilo luxo e ostentação",
+      "Visual cinematográfico",
+      "Transformação profissional",
+      "Ideal para marketing e branding"
+    ],
+    price: "R$12,90"
   }
 ];
 
@@ -36,43 +64,73 @@ export function Packs() {
         <p className="text-lg text-muted-foreground">O acesso que vai mudar sua presença digital.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Desktop View: Grid */}
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {packs.map((pack, index) => (
-          <Card key={index} className="group overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-300 bg-white">
-            <div className="relative h-48 w-full overflow-hidden">
-              <Image
-                src={pack.image.imageUrl}
-                alt={pack.title}
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
-                data-ai-hint={pack.image.imageHint}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-4 left-4 text-white font-bold text-lg">{pack.title}</div>
-            </div>
-            <CardHeader>
-              <CardDescription className="text-base text-foreground/80 min-h-[3rem]">
-                {pack.description}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2">
-                {pack.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Check className="w-4 h-4 text-primary shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-            <CardFooter>
-              <Button className="w-full h-12 rounded-lg font-bold group" variant={index === 0 ? "default" : "outline"}>
-                QUERO ESSE PACK
-              </Button>
-            </CardFooter>
-          </Card>
+          <PackCard key={index} pack={pack} index={index} />
         ))}
       </div>
+
+      {/* Mobile View: Carousel */}
+      <div className="md:hidden px-4">
+        <Carousel className="w-full max-w-sm mx-auto">
+          <CarouselContent>
+            {packs.map((pack, index) => (
+              <CarouselItem key={index}>
+                <PackCard pack={pack} index={index} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center gap-4 mt-6">
+            <CarouselPrevious className="static translate-y-0" />
+            <CarouselNext className="static translate-y-0" />
+          </div>
+        </Carousel>
+      </div>
     </section>
+  );
+}
+
+function PackCard({ pack, index }: { pack: typeof packs[0], index: number }) {
+  return (
+    <Card className="group overflow-hidden border border-primary/10 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full flex flex-col">
+      <div className="relative h-60 w-full overflow-hidden">
+        <Image
+          src={pack.image.imageUrl}
+          alt={pack.title}
+          fill
+          className="object-cover group-hover:scale-110 transition-transform duration-500"
+          data-ai-hint={pack.image.imageHint}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        <div className="absolute bottom-4 left-4 right-4 text-white font-bold text-lg leading-tight">
+          {pack.title}
+        </div>
+      </div>
+      <CardHeader>
+        <CardDescription className="text-base text-foreground/80 min-h-[3rem]">
+          {pack.description}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-6 flex-grow">
+        <ul className="space-y-3">
+          {pack.features.map((feature, fIndex) => (
+            <li key={fIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
+              <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+      <CardFooter className="flex flex-col gap-4 pt-0">
+        <div className="text-center w-full py-4 bg-secondary/30 rounded-xl">
+          <div className="text-3xl font-black text-primary">{pack.price}</div>
+          <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider">pagamento único</div>
+        </div>
+        <Button className="w-full h-14 rounded-full font-bold text-lg shadow-lg shadow-primary/20 hover:scale-105 transition-transform" variant="default">
+          QUERO ACESSAR AGORA
+        </Button>
+      </CardFooter>
+    </Card>
   );
 }
