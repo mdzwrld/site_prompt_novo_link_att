@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -8,9 +7,22 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-impact');
+  const logo = PlaceHolderImages.find(img => img.id === 'logo-rei-do-prompt');
 
   return (
-    <section className="pt-20 lg:pt-32 text-center max-w-4xl mx-auto flex flex-col items-center gap-8">
+    <section className="pt-12 lg:pt-20 text-center max-w-4xl mx-auto flex flex-col items-center gap-8">
+      {logo && (
+        <div className="relative w-32 h-32 md:w-48 md:h-48 mb-4">
+          <Image
+            src={logo.imageUrl}
+            alt="Rei do Prompt Logo"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
+      )}
+      
       <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-headline leading-tight tracking-tight">
         Como fiz qualquer pessoa parecer viver uma vida de luxo usando apenas <span className="text-primary italic">prompts de IA</span>
       </h1>
