@@ -3,8 +3,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ImageElevate AI - Percepção de Luxo',
-  description: 'Transforme qualquer foto comum em imagens que transmitem poder, status e presença com IA.',
+  title: 'Rei do Prompt - Transforme sua Imagem com IA',
+  description: 'Eleve sua percepção de status e poder com os prompts mais exclusivos do mercado.',
 };
 
 export default function RootLayout({

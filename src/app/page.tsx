@@ -18,7 +18,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <footer className="w-full py-12 border-t text-center text-sm text-muted-foreground">
-        <p>© {new Date().getFullYear()} ImageElevate AI. Todos os direitos reservados.</p>
+        <p>© {new Date().getFullYear()} Rei do Prompt. Todos os direitos reservados.</p>
       </footer>
     </div>
   );
