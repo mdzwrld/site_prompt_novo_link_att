@@ -10,7 +10,7 @@ export function FullBundle() {
   const bannerImage = PlaceHolderImages.find(img => img.id === 'full-bundle-banner');
 
   return (
-    <section className="py-6 md:py-10 max-w-4xl mx-auto px-4">
+    <section className="py-4 md:py-10 max-w-4xl mx-auto px-4">
       <Card className="relative overflow-hidden border-4 border-primary shadow-2xl bg-gradient-to-br from-white to-primary/5">
         <div className="absolute top-4 right-4 bg-primary text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full animate-bounce flex items-center gap-1 z-10">
           <Sparkles className="w-3 h-3" />
@@ -25,16 +25,14 @@ export function FullBundle() {
             Leve todos os nossos packs por um preço especial.
           </p>
           
-          {/* Imagem do combo abaixo do texto de descrição */}
           {bannerImage && (
-            <div className="relative w-full aspect-video md:aspect-[2/1] rounded-xl overflow-hidden border-2 border-primary/20 shadow-lg mt-6">
+            <div className="relative w-full aspect-video md:aspect-[2/1] rounded-xl overflow-hidden border-2 border-primary/20 shadow-lg mt-4">
               <Image
-                src={bannerImage.imageUrl}
-                alt={bannerImage.description}
+                src="https://i.imgur.com/Km3dJhc.jpeg"
+                alt="Combo Completo Banner"
                 fill
                 className="object-cover"
-                data-ai-hint={bannerImage.imageHint}
-                unoptimized // Adicionado para garantir o carregamento de URLs externas problemáticas
+                unoptimized
               />
             </div>
           )}
@@ -45,11 +43,11 @@ export function FullBundle() {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm md:text-base font-semibold">
                 <Check className="w-5 h-5 text-green-500 shrink-0" />
-                <span>+100 Prompts Foto Influencer Feminina</span>
+                <span>+300 Prompts Imagens Ostentação</span>
               </li>
               <li className="flex items-center gap-3 text-sm md:text-base font-semibold">
                 <Check className="w-5 h-5 text-green-500 shrink-0" />
-                <span>+300 Prompts Imagens Ostentação</span>
+                <span>+100 Prompts Foto Influencer Feminina</span>
               </li>
               <li className="flex items-center gap-3 text-sm md:text-base font-semibold">
                 <Check className="w-5 h-5 text-green-500 shrink-0" />
@@ -57,7 +55,7 @@ export function FullBundle() {
               </li>
             </ul>
             <div className="bg-primary/5 p-6 rounded-2xl flex flex-col items-center justify-center text-center border border-primary/10">
-              <span className="text-sm text-muted-foreground line-through">De R$ 38,70</span>
+              <span className="text-sm text-muted-foreground line-through">De R$ 33,70</span>
               <div className="text-4xl md:text-6xl font-black text-primary">R$ 27,90</div>
               <span className="text-xs font-bold text-primary/60 uppercase tracking-widest">Pagamento Único</span>
             </div>

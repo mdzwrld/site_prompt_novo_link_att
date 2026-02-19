@@ -17,19 +17,6 @@ import { type CarouselApi } from "@/components/ui/carousel";
 
 const packs = [
   {
-    title: "+100 Prompts Foto Influencer Feminina",
-    description: "Gere fotos de Influencer com seu rosto! Viagens, festas, ensaios e muito mais!",
-    image: PlaceHolderImages.find(img => img.id === 'pack-influencer')!,
-    features: [
-      "+100 prompts exclusivos",
-      "Fotos de viagens, festas e ensaios",
-      "Gere imagens com seu próprio rosto",
-      "Estilo realista e profissional",
-      "Ideal para redes sociais"
-    ],
-    price: "R$12,90"
-  },
-  {
     title: "+300 Prompts Imagens Ostentação",
     description: "Transforme suas fotos comuns em imagens de alto impacto usando inteligência artificial.",
     image: PlaceHolderImages.find(img => img.id === 'pack-ostentacao')!,
@@ -43,6 +30,19 @@ const packs = [
     price: "R$12,90"
   },
   {
+    title: "+100 Prompts Foto Influencer Feminina",
+    description: "Gere fotos de Influencer com seu rosto! Viagens, festas, ensaios e muito mais!",
+    image: PlaceHolderImages.find(img => img.id === 'pack-influencer')!,
+    features: [
+      "+100 prompts exclusivos",
+      "Fotos de viagens, festas e ensaios",
+      "Gere imagens com seu próprio rosto",
+      "Estilo realista e profissional",
+      "Ideal para redes sociais"
+    ],
+    price: "R$10,90"
+  },
+  {
     title: "+240 Prompts Ensaio de Bebês",
     description: "Crie ensaios newborn delicados e emocionantes com inteligência artificial.",
     image: PlaceHolderImages.find(img => img.id === 'pack-baby')!,
@@ -53,7 +53,7 @@ const packs = [
       "Fotos profissionais",
       "Ideal para fotógrafos"
     ],
-    price: "R$12,90"
+    price: "R$9,90"
   }
 ];
 
@@ -70,8 +70,8 @@ export function Packs() {
   }, [api]);
 
   return (
-    <section id="packs" className="space-y-8 md:space-y-12 py-8 md:py-12 scroll-mt-24">
-      <div className="text-center space-y-4">
+    <section id="packs" className="space-y-6 md:space-y-12 py-6 md:py-12 scroll-mt-24">
+      <div className="text-center space-y-2">
         <h2 className="text-3xl md:text-5xl font-bold font-headline">Escolha seu pack</h2>
         <p className="text-lg text-muted-foreground">O acesso que vai mudar sua presença digital.</p>
       </div>
@@ -90,13 +90,13 @@ export function Packs() {
           opts={{
             align: "center",
             loop: false,
-            startIndex: 1, // Começa no do meio (Ostentação)
+            startIndex: 0,
           }}
           className="w-full"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="-ml-2">
             {packs.map((pack, index) => (
-              <CarouselItem key={index} className="pl-2 basis-[88%] first:pl-6 last:pr-6">
+              <CarouselItem key={index} className="pl-2 basis-[88%] first:pl-4 last:pr-4">
                 <div className="p-1">
                   <PackCard pack={pack} index={index} />
                 </div>
@@ -104,7 +104,7 @@ export function Packs() {
             ))}
           </CarouselContent>
           
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 mt-6">
             {packs.map((_, index) => (
               <button
                 key={index}
@@ -116,11 +116,6 @@ export function Packs() {
               />
             ))}
           </div>
-          
-          <div className="flex justify-center gap-6 mt-6">
-            <CarouselPrevious className="static translate-y-0 h-12 w-12" />
-            <CarouselNext className="static translate-y-0 h-12 w-12" />
-          </div>
         </Carousel>
       </div>
     </section>
@@ -130,7 +125,7 @@ export function Packs() {
 function PackCard({ pack, index }: { pack: typeof packs[0], index: number }) {
   return (
     <Card className="group overflow-hidden border border-primary/10 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full flex flex-col">
-      <div className="relative h-72 w-full overflow-hidden">
+      <div className="relative h-64 w-full overflow-hidden">
         <Image
           src={pack.image.imageUrl}
           alt={pack.title}
@@ -143,27 +138,27 @@ function PackCard({ pack, index }: { pack: typeof packs[0], index: number }) {
           {pack.title}
         </div>
       </div>
-      <CardHeader>
-        <CardDescription className="text-base text-foreground/80 min-h-[3rem]">
+      <CardHeader className="py-4">
+        <CardDescription className="text-sm text-foreground/80 min-h-[2.5rem] line-clamp-2">
           {pack.description}
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6 flex-grow">
-        <ul className="space-y-3">
+      <CardContent className="space-y-4 flex-grow pb-4">
+        <ul className="space-y-2">
           {pack.features.map((feature, fIndex) => (
-            <li key={fIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-              <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+            <li key={fIndex} className="flex items-start gap-2 text-xs text-muted-foreground">
+              <Check className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
               <span>{feature}</span>
             </li>
           ))}
         </ul>
       </CardContent>
-      <CardFooter className="flex flex-col gap-4 pt-0">
-        <div className="text-center w-full py-4 bg-secondary/30 rounded-xl">
-          <div className="text-3xl font-black text-primary">{pack.price}</div>
-          <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider">pagamento único</div>
+      <CardFooter className="flex flex-col gap-3 pt-0 pb-6">
+        <div className="text-center w-full py-3 bg-secondary/30 rounded-xl">
+          <div className="text-2xl font-black text-primary">{pack.price}</div>
+          <div className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">pagamento único</div>
         </div>
-        <Button className="w-full h-14 rounded-full font-bold text-lg shadow-lg shadow-primary/20 hover:scale-105 transition-transform" variant="default">
+        <Button className="w-full h-12 rounded-full font-bold text-base shadow-lg shadow-primary/20 hover:scale-105 transition-transform" variant="default">
           QUERO ACESSAR AGORA
         </Button>
       </CardFooter>
