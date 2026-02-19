@@ -1,64 +1,40 @@
 {
   "placeholderImages": [
     {
-      "id": "comparison-1-composite",
-      "description": "Composite image showing a young man in a favela (left) vs. same man in a luxury car with cash (right) with labels 'Antes' and 'Depois'",
-      "imageUrl": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBsaWZlc3R5bGV8ZW58MHx8fHwxNzc0MTEzMDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "luxury lifestyle comparison"
+      "id": "comparison-1",
+      "description": "Resultado de transformação luxuosa 1",
+      "imageUrl": "https://fiapy.nyc3.digitaloceanspaces.com/static/698fb9acf03f185bdcdd3715/82334c5f2ebf4d13f5e7_-_imagem_2026-02-13_220454793.png",
+      "imageHint": "luxury transformation"
     },
     {
-      "id": "before-1",
-      "description": "Ordinary casual selfie in a room",
-      "imageUrl": "https://images.unsplash.com/photo-1662695089339-a2c24231a3ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxvcmRpbmFyeSUyMHBlcnNvbiUyMHNlbGZpZXxlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "ordinary person selfie"
+      "id": "comparison-2",
+      "description": "Resultado de transformação luxuosa 2",
+      "imageUrl": "https://fiapy.nyc3.digitaloceanspaces.com/static/698fb9acf03f185bdcdd3715/da22aa14207d1938c83b_-_3.png",
+      "imageHint": "lifestyle upgrade"
     },
     {
-      "id": "after-1",
-      "description": "Luxury lifestyle version of the same person in a private jet",
-      "imageUrl": "https://images.unsplash.com/photo-1619652707246-78e89d2b9414?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsdXh1cnklMjBwZXJzb24lMjBqZXR8ZW58MHx8fHwxNzcxNTA5MTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "luxury person jet"
-    },
-    {
-      "id": "before-2",
-      "description": "Simple phone photo of a baby",
-      "imageUrl": "https://images.unsplash.com/photo-1571763806648-5d022a3d1a29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxiYWJ5JTIwcGhvbmUlMjBwaG90b3xlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "baby phone photo"
-    },
-    {
-      "id": "after-2",
-      "description": "Professional studio baby photoshoot with props",
-      "imageUrl": "https://images.unsplash.com/photo-1761891953024-74aadae12cff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBiYWJ5JTIwc3R1ZGlvfGVufDB8fHx8MTc3MTUwOTE2NHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional baby studio"
-    },
-    {
-      "id": "before-3",
-      "description": "Low quality photo of a person in a park",
-      "imageUrl": "https://images.unsplash.com/photo-1604883555768-e39e7efae702?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxvcmRpbmFyeSUyMHBhcmslMjBwaG90b3xlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "ordinary park photo"
-    },
-    {
-      "id": "after-3",
-      "description": "High-end fashion influencer aesthetic in a luxury city",
-      "imageUrl": "https://images.unsplash.com/photo-1632765937900-a3bbbfa58d46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpbmZsdWVuY2VyJTIwZmFzaGlvbiUyMHN0cmVldHxlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "influencer fashion street"
+      "id": "comparison-3",
+      "description": "Resultado de transformação luxuosa 3",
+      "imageUrl": "https://fiapy.nyc3.digitaloceanspaces.com/static/698fb9acf03f185bdcdd3715/3f75793bbbf5564e5c07_-_imagem_2026-02-13_223208841.png",
+      "imageHint": "power image"
     },
     {
       "id": "pack-ostentacao",
-      "description": "Luxury sports car in front of a mansion",
-      "imageUrl": "https://images.unsplash.com/photo-1567324250787-998f8b42f21a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bHV4dXJ5JTIwY2FyJTIwbWFuc2lvbnxlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "luxury car mansion"
+      "description": "Preview do Pack Ostentação",
+      "imageUrl": "https://i.postimg.cc/PxTMCMfQ/IMG-7007.png",
+      "imageHint": "luxury cars status"
     },
     {
       "id": "pack-baby",
-      "description": "Beautiful cinematic baby portrait",
-      "imageUrl": "https://images.unsplash.com/photo-1722089712364-11ab36127807?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaW5lbWF0aWMlMjBiYWJ5JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcxNTA5MTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "cinematic baby portrait"
+      "description": "Preview do Pack Ensaio de Bebê",
+      "imageUrl": "https://i.postimg.cc/3W5NwtY1/IMG-7008.png",
+      "imageHint": "baby studio photo"
     },
     {
       "id": "pack-influencer",
-      "description": "Aesthetic influencer aesthetic",
-      "imageUrl": "https://images.unsplash.com/photo-1517695465815-f54d740e692b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmYXNoaW9uJTIwaW5mbHVlbmNlcnxlbnwwfHx8fDE3NzE1MDEwMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "fashion influencer"
+      "description": "Preview do Pack Influenciadora",
+      "imageUrl": "https://i.postimg.cc/7PRw039F/Design-sem-nome-(4).png",
+      "imageHint": "influencer aesthetic"
     }
   ]
 }
