@@ -1,6 +1,12 @@
 {
   "placeholderImages": [
     {
+      "id": "comparison-1-composite",
+      "description": "Composite image showing a young man in a favela (left) vs. same man in a luxury car with cash (right) with labels 'Antes' and 'Depois'",
+      "imageUrl": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBsaWZlc3R5bGV8ZW58MHx8fHwxNzc0MTEzMDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury lifestyle comparison"
+    },
+    {
       "id": "before-1",
       "description": "Ordinary casual selfie in a room",
       "imageUrl": "https://images.unsplash.com/photo-1662695089339-a2c24231a3ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxvcmRpbmFyeSUyMHBlcnNvbiUyMHNlbGZpZXxlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
