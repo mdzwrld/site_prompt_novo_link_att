@@ -58,8 +58,10 @@ export function FullBundle() {
         </CardContent>
 
         <CardFooter className="pb-10 px-6 md:px-12">
-          <Button className="w-full h-16 md:h-20 rounded-full font-black text-xl md:text-2xl shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all bg-primary hover:bg-primary/90 text-white group uppercase">
-            QUERO TODOS OS PROMPTS
+          <Button asChild className="w-full h-16 md:h-20 rounded-full font-black text-xl md:text-2xl shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all bg-primary hover:bg-primary/90 text-white group uppercase">
+            <a href="https://ambienteseguro.org.ua/c/a58da6695b">
+              QUERO TODOS OS PROMPTS
+            </a>
           </Button>
         </CardFooter>
       </Card>
