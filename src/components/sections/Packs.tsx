@@ -13,6 +13,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import * as React from "react";
+import { type CarouselApi } from "@/components/ui/carousel";
 
 const packs = [
   {
@@ -29,19 +31,6 @@ const packs = [
     price: "R$12,90"
   },
   {
-    title: "+240 Prompts Ensaio de Bebês",
-    description: "Crie ensaios newborn delicados e emocionantes com inteligência artificial.",
-    image: PlaceHolderImages.find(img => img.id === 'pack-baby')!,
-    features: [
-      "+240 prompts prontos",
-      "Ensaios newborn realistas",
-      "Cenários criativos e delicados",
-      "Fotos profissionais",
-      "Ideal para fotógrafos"
-    ],
-    price: "R$12,90"
-  },
-  {
     title: "+300 Prompts Imagens Ostentação",
     description: "Transforme suas fotos comuns em imagens de alto impacto usando inteligência artificial.",
     image: PlaceHolderImages.find(img => img.id === 'pack-ostentacao')!,
@@ -53,10 +42,34 @@ const packs = [
       "Ideal para marketing e branding"
     ],
     price: "R$12,90"
+  },
+  {
+    title: "+240 Prompts Ensaio de Bebês",
+    description: "Crie ensaios newborn delicados e emocionantes com inteligência artificial.",
+    image: PlaceHolderImages.find(img => img.id === 'pack-baby')!,
+    features: [
+      "+240 prompts prontos",
+      "Ensaios newborn realistas",
+      "Cenários criativos e delicados",
+      "Fotos profissionais",
+      "Ideal para fotógrafos"
+    ],
+    price: "R$12,90"
   }
 ];
 
 export function Packs() {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
     <section id="packs" className="space-y-12 py-12 scroll-mt-24">
       <div className="text-center space-y-4">
@@ -71,19 +84,43 @@ export function Packs() {
         ))}
       </div>
 
-      {/* Mobile View: Carousel */}
-      <div className="md:hidden px-4">
-        <Carousel className="w-full max-w-sm mx-auto">
-          <CarouselContent>
+      {/* Mobile View: Carousel with Peek Effect */}
+      <div className="md:hidden">
+        <Carousel 
+          setApi={setApi}
+          opts={{
+            align: "center",
+            loop: false,
+            startIndex: 1, // Começa no do meio (Ostentação)
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
             {packs.map((pack, index) => (
-              <CarouselItem key={index}>
-                <PackCard pack={pack} index={index} />
+              <CarouselItem key={index} className="pl-2 basis-[88%] first:pl-6 last:pr-6">
+                <div className="p-1">
+                  <PackCard pack={pack} index={index} />
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-center gap-4 mt-6">
-            <CarouselPrevious className="static translate-y-0" />
-            <CarouselNext className="static translate-y-0" />
+          
+          <div className="flex justify-center gap-2 mt-8">
+            {packs.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                  current === index ? "bg-primary w-8" : "bg-primary/20"
+                }`}
+                aria-label={`Ir para pack ${index + 1}`}
+              />
+            ))}
+          </div>
+          
+          <div className="flex justify-center gap-6 mt-6">
+            <CarouselPrevious className="static translate-y-0 h-12 w-12" />
+            <CarouselNext className="static translate-y-0 h-12 w-12" />
           </div>
         </Carousel>
       </div>
@@ -94,7 +131,8 @@ export function Packs() {
 function PackCard({ pack, index }: { pack: typeof packs[0], index: number }) {
   return (
     <Card className="group overflow-hidden border border-primary/10 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full flex flex-col">
-      <div className="relative h-60 w-full overflow-hidden">
+      {/* Imagem aumentada de h-60 para h-72 para mais destaque */}
+      <div className="relative h-72 w-full overflow-hidden">
         <Image
           src={pack.image.imageUrl}
           alt={pack.title}
