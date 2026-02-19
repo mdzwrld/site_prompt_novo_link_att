@@ -24,21 +24,23 @@ export function FullBundle() {
           <p className="text-sm md:text-lg text-muted-foreground font-medium px-4">
             Leve todos os nossos packs por um preço especial.
           </p>
-        </CardHeader>
-
-        <CardContent className="space-y-6">
+          
+          {/* Imagem do combo abaixo do texto de descrição */}
           {bannerImage && (
-            <div className="relative w-full aspect-video md:aspect-[2/1] rounded-xl overflow-hidden border-2 border-primary/20 shadow-lg">
+            <div className="relative w-full aspect-video md:aspect-[2/1] rounded-xl overflow-hidden border-2 border-primary/20 shadow-lg mt-6">
               <Image
                 src={bannerImage.imageUrl}
                 alt={bannerImage.description}
                 fill
                 className="object-cover"
                 data-ai-hint={bannerImage.imageHint}
+                unoptimized // Adicionado para garantir o carregamento de URLs externas problemáticas
               />
             </div>
           )}
+        </CardHeader>
 
+        <CardContent className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm md:text-base font-semibold">
