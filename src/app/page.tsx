@@ -1,9 +1,7 @@
-
 import { Hero } from '@/components/sections/Hero';
 import { VSL } from '@/components/sections/VSL';
 import { Comparison } from '@/components/sections/Comparison';
 import { Packs } from '@/components/sections/Packs';
-import { FinalCTA } from '@/components/sections/FinalCTA';
 import { Navbar } from '@/components/ui/Navbar';
 
 export default function Home() {
@@ -15,7 +13,6 @@ export default function Home() {
         <VSL />
         <Comparison />
         <Packs />
-        <FinalCTA />
       </main>
       <footer className="w-full py-12 border-t text-center text-sm text-muted-foreground">
         <p>© {new Date().getFullYear()} Rei do Prompt. Todos os direitos reservados.</p>
