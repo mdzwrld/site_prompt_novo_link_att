@@ -38,7 +38,7 @@ const packs = [
       "Estilo realista e profissional"
     ],
     price: "R$10,90",
-    checkoutUrl: "#"
+    checkoutUrl: "https://ambienteseguro.org.ua/c/71ee0c15d9"
   },
   {
     title: "+240 Prompts Ensaio de Bebês",
