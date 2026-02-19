@@ -8,11 +8,11 @@ import { FinalCTA } from '@/components/sections/FinalCTA';
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col items-center">
-      <main className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-24 pb-12 md:pb-24">
+      <main className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8 md:space-y-24 pb-12 md:pb-24">
         <Hero />
         <VSL />
-        <Comparison />
         <Benefits />
+        <Comparison />
         <Packs />
         <FinalCTA />
       </main>
