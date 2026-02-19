@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "before-1",
+      "description": "Ordinary casual selfie in a room",
+      "imageUrl": "https://images.unsplash.com/photo-1662695089339-a2c24231a3ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxvcmRpbmFyeSUyMHBlcnNvbiUyMHNlbGZpZXxlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ordinary person selfie"
+    },
+    {
+      "id": "after-1",
+      "description": "Luxury lifestyle version of the same person in a private jet",
+      "imageUrl": "https://images.unsplash.com/photo-1619652707246-78e89d2b9414?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsdXh1cnklMjBwZXJzb24lMjBqZXR8ZW58MHx8fHwxNzcxNTA5MTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury person jet"
+    },
+    {
+      "id": "before-2",
+      "description": "Simple phone photo of a baby",
+      "imageUrl": "https://images.unsplash.com/photo-1571763806648-5d022a3d1a29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxiYWJ5JTIwcGhvbmUlMjBwaG90b3xlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "baby phone photo"
+    },
+    {
+      "id": "after-2",
+      "description": "Professional studio baby photoshoot with props",
+      "imageUrl": "https://images.unsplash.com/photo-1761891953024-74aadae12cff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBiYWJ5JTIwc3R1ZGlvfGVufDB8fHx8MTc3MTUwOTE2NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional baby studio"
+    },
+    {
+      "id": "before-3",
+      "description": "Low quality photo of a person in a park",
+      "imageUrl": "https://images.unsplash.com/photo-1604883555768-e39e7efae702?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxvcmRpbmFyeSUyMHBhcmslMjBwaG90b3xlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ordinary park photo"
+    },
+    {
+      "id": "after-3",
+      "description": "High-end fashion influencer aesthetic in a luxury city",
+      "imageUrl": "https://images.unsplash.com/photo-1632765937900-a3bbbfa58d46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpbmZsdWVuY2VyJTIwZmFzaGlvbiUyMHN0cmVldHxlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "influencer fashion street"
+    },
+    {
+      "id": "pack-ostentacao",
+      "description": "Luxury sports car in front of a mansion",
+      "imageUrl": "https://images.unsplash.com/photo-1567324250787-998f8b42f21a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bHV4dXJ5JTIwY2FyJTIwbWFuc2lvbnxlbnwwfHx8fDE3NzE1MDkxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury car mansion"
+    },
+    {
+      "id": "pack-baby",
+      "description": "Beautiful cinematic baby portrait",
+      "imageUrl": "https://images.unsplash.com/photo-1722089712364-11ab36127807?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaW5lbWF0aWMlMjBiYWJ5JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcxNTA5MTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cinematic baby portrait"
+    },
+    {
+      "id": "pack-influencer",
+      "description": "Aesthetic influencer aesthetic",
+      "imageUrl": "https://images.unsplash.com/photo-1517695465815-f54d740e692b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmYXNoaW9uJTIwaW5mbHVlbmNlcnxlbnwwfHx8fDE3NzE1MDEwMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion influencer"
+    }
+  ]
 }
