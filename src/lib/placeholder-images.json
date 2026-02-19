@@ -47,6 +47,12 @@
       "description": "Preview do Pack Influenciadora",
       "imageUrl": "https://i.postimg.cc/7PRw039F/Design-sem-nome-(4).png",
       "imageHint": "influencer aesthetic"
+    },
+    {
+      "id": "full-bundle-banner",
+      "description": "Banner Acesso Completo Combo",
+      "imageUrl": "https://fiapy.nyc3.digitaloceanspaces.com/static/698fb9acf03f185bdcdd3715/3419363d5960ccae7923_-_ACESSO_COMPLETE_(COMBO)_(1).png",
+      "imageHint": "luxury combo banner"
     }
   ]
 }
