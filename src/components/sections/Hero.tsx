@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Link from 'next/link';
 
 export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-impact');
@@ -31,9 +32,11 @@ export function Hero() {
       )}
 
       <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-2 px-6">
-        <Button size="lg" className="h-14 md:h-16 px-10 text-base md:text-lg rounded-full shadow-xl shadow-primary/20 hover:scale-105 transition-transform font-bold group">
-          QUERO PARECER OUTRO NÍVEL
-          <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        <Button asChild size="lg" className="h-14 md:h-16 px-10 text-base md:text-lg rounded-full shadow-xl shadow-primary/20 hover:scale-105 transition-transform font-bold group">
+          <Link href="#packs">
+            QUERO PARECER OUTRO NÍVEL
+            <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </Button>
       </div>
       <div className="mt-1 flex items-center gap-2 text-xs md:text-sm text-muted-foreground animate-pulse">

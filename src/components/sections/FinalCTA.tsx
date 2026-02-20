@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Rocket } from 'lucide-react';
+import Link from 'next/link';
 
 export function FinalCTA() {
   return (
@@ -17,11 +18,14 @@ export function FinalCTA() {
       </div>
       <div className="flex flex-col items-center gap-6 pt-2 md:pt-4">
         <Button 
+          asChild
           size="lg" 
           className="h-16 md:h-20 px-8 md:px-12 text-lg md:text-xl rounded-full shadow-2xl shadow-primary/30 font-bold bg-primary hover:scale-105 hover:shadow-primary/40 transition-all duration-300 flex items-center gap-3"
         >
-          <Rocket className="w-6 h-6" />
-          COMEÇAR AGORA
+          <Link href="#packs">
+            <Rocket className="w-6 h-6" />
+            COMEÇAR AGORA
+          </Link>
         </Button>
       </div>
     </section>
