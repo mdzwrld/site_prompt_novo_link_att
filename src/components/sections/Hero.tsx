@@ -33,7 +33,7 @@ export function Hero() {
 
       <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-2 px-6">
         <Button asChild size="lg" className="h-14 md:h-16 px-10 text-base md:text-lg rounded-full shadow-xl shadow-primary/20 hover:scale-105 transition-transform font-bold group">
-          <Link href="#packs">
+          <Link href="#comparisons">
             QUERO PARECER OUTRO NÍVEL
             <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
