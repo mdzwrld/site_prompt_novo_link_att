@@ -9,7 +9,7 @@ export function VSL() {
         <iframe
           width="100%"
           height="100%"
-          src="https://www.youtube.com/embed/_DpVZWthQmk?autoplay=0"
+          src="https://www.youtube.com/embed/-UjJ1WCjt6I?autoplay=0"
           title="ImageElevate AI VSL"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
