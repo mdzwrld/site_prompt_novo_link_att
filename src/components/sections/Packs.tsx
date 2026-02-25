@@ -25,7 +25,7 @@ const packs = [
       "Ideal para marketing e branding"
     ],
     price: "R$12,90",
-    checkoutUrl: "https://ambienteseguro.org.ua/c/02cfd3da8d"
+    checkoutUrl: "https://compraseguraonline.org.ua/c/02cfd3da8d"
   },
   {
     title: "+100 Prompts Foto Influencer Feminina",
@@ -38,7 +38,7 @@ const packs = [
       "Estilo realista e profissional"
     ],
     price: "R$10,90",
-    checkoutUrl: "https://ambienteseguro.org.ua/c/71ee0c15d9"
+    checkoutUrl: "https://compraseguraonline.org.ua/c/71ee0c15d9"
   },
   {
     title: "+240 Prompts Ensaio de Bebês",
@@ -51,7 +51,7 @@ const packs = [
       "Ideal para fotógrafos"
     ],
     price: "R$9,90",
-    checkoutUrl: "https://ambienteseguro.org.ua/c/d26297b314"
+    checkoutUrl: "https://compraseguraonline.org.ua/c/d26297b314"
   }
 ];
 
