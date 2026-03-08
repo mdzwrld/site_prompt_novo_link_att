@@ -2,6 +2,13 @@
 "use client";
 
 import { Star } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import * as React from "react";
+import { type CarouselApi } from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -47,28 +54,78 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
     <section className="py-12 bg-secondary/5 rounded-3xl border border-primary/5">
       <div className="max-w-6xl mx-auto px-6 text-center space-y-10">
-        <h2 className="text-2xl md:text-4xl font-black text-primary uppercase tracking-tight">
-          MAIS DE 3.000 PESSOAS JÁ ESTÃO USANDO ESSES PROMPTS
-        </h2>
+        <div className="space-y-2">
+          <h2 className="text-2xl md:text-4xl font-black text-primary uppercase tracking-tight">
+            MAIS DE 3.000 PESSOAS JÁ ESTÃO USANDO ESSES PROMPTS
+          </h2>
+          <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
+            +3.200 pessoas já transformaram seu perfil
+          </p>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Desktop View: Grid */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-primary/5 flex flex-col items-center gap-3 text-center">
-              <div className="flex gap-0.5">
-                {[...Array(t.stars)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="text-base font-medium italic text-foreground/90 leading-relaxed">
-                "{t.text}"
-              </p>
-            </div>
+            <TestimonialCard key={idx} testimonial={t} />
           ))}
+        </div>
+
+        {/* Mobile View: Carousel */}
+        <div className="md:hidden">
+          <Carousel setApi={setApi} className="w-full">
+            <CarouselContent>
+              {testimonials.map((t, idx) => (
+                <CarouselItem key={idx}>
+                  <div className="p-1">
+                    <TestimonialCard testimonial={t} />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-1.5 mt-6">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => api?.scrollTo(index)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    current === index ? "bg-primary w-6" : "bg-primary/20 w-1.5"
+                  }`}
+                  aria-label={`Ir para depoimento ${index + 1}`}
+                />
+              ))}
+            </div>
+          </Carousel>
         </div>
       </div>
     </section>
+  );
+}
+
+function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
+  return (
+    <div className="bg-white p-6 rounded-2xl shadow-sm border border-primary/5 flex flex-col items-center gap-3 text-center h-full">
+      <div className="flex gap-0.5">
+        {[...Array(testimonial.stars)].map((_, i) => (
+          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+        ))}
+      </div>
+      <p className="text-base font-medium italic text-foreground/90 leading-relaxed">
+        "{testimonial.text}"
+      </p>
+    </div>
   );
 }
