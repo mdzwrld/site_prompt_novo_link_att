@@ -1,8 +1,9 @@
+
 "use client";
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check } from 'lucide-react';
+import { Check, AlertTriangle } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import {
@@ -25,6 +26,7 @@ const packs = [
       "Ideal para marketing e branding"
     ],
     price: "R$12,90",
+    oldPrice: "R$97",
     checkoutUrl: "https://compraseguraonline.org.ua/c/02cfd3da8d"
   },
   {
@@ -38,6 +40,7 @@ const packs = [
       "Estilo realista e profissional"
     ],
     price: "R$10,90",
+    oldPrice: "R$77",
     checkoutUrl: "https://compraseguraonline.org.ua/c/71ee0c15d9"
   },
   {
@@ -51,6 +54,7 @@ const packs = [
       "Ideal para fotógrafos"
     ],
     price: "R$9,90",
+    oldPrice: "R$67",
     checkoutUrl: "https://compraseguraonline.org.ua/c/d26297b314"
   }
 ];
@@ -68,41 +72,34 @@ export function Packs() {
   }, [api]);
 
   return (
-    <section id="packs" className="space-y-4 md:space-y-10 py-4 md:py-10 scroll-mt-24">
-      <div className="text-center space-y-1">
-        <h2 className="text-2xl md:text-5xl font-bold font-headline">Escolha seu pack</h2>
-        <p className="text-sm md:text-lg text-muted-foreground">O acesso que vai mudar sua presença digital.</p>
+    <section id="packs" className="space-y-8 md:space-y-16 py-12 md:py-24 scroll-mt-24">
+      <div className="text-center space-y-4 px-4">
+        <h2 className="text-3xl md:text-6xl font-black font-headline uppercase">Escolha seu pack</h2>
+        <div className="flex flex-col items-center gap-2">
+           <div className="bg-destructive/10 text-destructive px-6 py-2 rounded-full font-black text-sm md:text-base flex items-center gap-2 border border-destructive/20 animate-pulse">
+             <AlertTriangle className="w-5 h-5" />
+             ⚠️ Oferta promocional pode sair do ar a qualquer momento.
+           </div>
+           <p className="text-lg md:text-2xl text-muted-foreground font-medium">O acesso que vai mudar sua presença digital.</p>
+        </div>
       </div>
 
-      {/* Desktop View: Grid */}
       <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
         {packs.map((pack, index) => (
-          <PackCard key={index} pack={pack} index={index} />
+          <PackCard key={index} pack={pack} />
         ))}
       </div>
 
-      {/* Mobile View: Carousel with Peek Effect */}
       <div className="md:hidden">
-        <Carousel 
-          setApi={setApi}
-          opts={{
-            align: "center",
-            loop: false,
-            startIndex: 0,
-          }}
-          className="w-full"
-        >
+        <Carousel setApi={setApi} opts={{ align: "center", loop: false }} className="w-full">
           <CarouselContent className="-ml-2">
             {packs.map((pack, index) => (
               <CarouselItem key={index} className="pl-2 basis-[88%] first:pl-4 last:pr-4">
-                <div className="p-1">
-                  <PackCard pack={pack} index={index} />
-                </div>
+                <PackCard pack={pack} />
               </CarouselItem>
             ))}
           </CarouselContent>
-          
-          <div className="flex justify-center gap-2 mt-4">
+          <div className="flex justify-center gap-2 mt-6">
             {packs.map((_, index) => (
               <button
                 key={index}
@@ -110,7 +107,6 @@ export function Packs() {
                 className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${
                   current === index ? "bg-primary w-6" : "bg-primary/20"
                 }`}
-                aria-label={`Ir para pack ${index + 1}`}
               />
             ))}
           </div>
@@ -120,51 +116,49 @@ export function Packs() {
   );
 }
 
-function PackCard({ pack, index }: { pack: typeof packs[0], index: number }) {
+function PackCard({ pack }: { pack: typeof packs[0] }) {
   return (
-    <Card className="group overflow-hidden border border-primary/10 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full flex flex-col">
-      <div className="relative h-56 w-full overflow-hidden">
+    <Card className="group overflow-hidden border-2 border-primary/10 shadow-xl hover:shadow-2xl transition-all duration-300 bg-white h-full flex flex-col">
+      <div className="relative h-64 w-full overflow-hidden">
         <Image
           src={pack.image.imageUrl}
           alt={pack.title}
           fill
-          className="object-cover group-hover:scale-110 transition-transform duration-500"
-          data-ai-hint={pack.image.imageHint}
+          className="object-cover group-hover:scale-110 transition-transform duration-700"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        <div className="absolute bottom-4 left-4 right-4 text-white font-bold text-lg leading-tight">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+        <div className="absolute bottom-6 left-6 right-6 text-white font-black text-2xl leading-tight uppercase italic tracking-tight">
           {pack.title}
         </div>
       </div>
-      <CardHeader className="py-4">
-        <CardDescription className="text-sm text-foreground/80 min-h-[2.5rem] line-clamp-2">
+      <CardContent className="space-y-6 flex-grow p-8">
+        <p className="text-muted-foreground font-medium leading-relaxed">
           {pack.description}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-4 flex-grow pb-4">
-        <ul className="space-y-2">
+        </p>
+        <ul className="space-y-3">
           {pack.features.map((feature, fIndex) => (
-            <li key={fIndex} className="flex items-start gap-2 text-xs text-muted-foreground">
-              <Check className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+            <li key={fIndex} className="flex items-start gap-3 text-sm font-bold text-foreground/80">
+              <Check className="w-5 h-5 text-primary shrink-0" />
               <span>{feature}</span>
             </li>
           ))}
         </ul>
       </CardContent>
-      <CardFooter className="flex flex-col gap-3 pt-0 pb-6">
-        <div className="text-center w-full py-3 bg-secondary/30 rounded-xl">
-          <div className="text-2xl font-black text-primary">{pack.price}</div>
-          <div className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">pagamento único</div>
+      <CardFooter className="flex flex-col gap-4 p-8 pt-0">
+        <div className="w-full space-y-1">
+          <p className="text-center text-sm font-bold text-muted-foreground line-through">Valor real: {pack.oldPrice}</p>
+          <div className="text-center w-full py-4 bg-primary/5 rounded-2xl border-2 border-primary/20">
+            <p className="text-xs font-black uppercase tracking-widest text-primary/60 mb-1">Hoje disponível por apenas</p>
+            <div className="text-5xl font-black text-primary tracking-tighter">{pack.price}</div>
+            <p className="text-[10px] font-black text-primary/60 uppercase mt-1">Pagamento Único</p>
+          </div>
         </div>
-        <Button 
-          asChild
-          className="w-full h-12 rounded-full font-bold text-base shadow-lg shadow-primary/20 hover:scale-105 transition-transform" 
-          variant="default"
-        >
-          <a href={pack.checkoutUrl}>
-            QUERO ACESSAR AGORA
-          </a>
-        </Button>
+        <div className="space-y-2 w-full text-center">
+          <Button asChild className="w-full h-16 rounded-full font-black text-xl shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform uppercase bg-primary">
+            <a href={pack.checkoutUrl}>QUERO ACESSO AGORA</a>
+          </Button>
+          <p className="text-xs font-bold text-muted-foreground">Acesso imediato após pagamento.</p>
+        </div>
       </CardFooter>
     </Card>
   );
