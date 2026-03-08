@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -37,7 +36,7 @@ export function Hero() {
       <div className="flex flex-col items-center gap-4 w-full px-6">
         <Button asChild size="lg" className="w-full sm:w-auto h-16 md:h-20 px-10 text-lg md:text-xl rounded-full shadow-2xl shadow-primary/30 hover:scale-105 transition-all font-black group bg-primary uppercase">
           <Link href="#packs">
-            QUERO MINHAS FOTOS DE LUXO AGORA
+            PEGAR MEUS PROMPTS
             <ChevronRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
           </Link>
         </Button>

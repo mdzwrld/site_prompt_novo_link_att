@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -156,7 +155,7 @@ function PackCard({ pack }: { pack: typeof packs[0] }) {
         </div>
         <div className="space-y-2 w-full text-center">
           <Button asChild className="w-full h-16 rounded-full font-black text-xl shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform uppercase bg-primary">
-            <a href={pack.checkoutUrl}>QUERO ACESSO AGORA</a>
+            <a href={pack.checkoutUrl}>PEGAR MEUS PROMPTS</a>
           </Button>
           <div className="flex flex-col gap-1 items-center">
             <p className="text-xs font-bold text-muted-foreground">Acesso liberado automaticamente após pagamento.</p>

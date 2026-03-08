@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -29,7 +28,7 @@ export function FinalCTA() {
         >
           <Link href="#packs">
             <Rocket className="w-8 h-8 md:w-10 md:h-10" />
-            QUERO MINHAS FOTOS DE LUXO AGORA
+            PEGAR MEUS PROMPTS
           </Link>
         </Button>
         <div className="space-y-1">

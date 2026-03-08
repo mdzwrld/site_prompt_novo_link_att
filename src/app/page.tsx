@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -32,7 +31,7 @@ export default function Home() {
         
         <div className="flex justify-center py-4">
           <Button asChild size="lg" className="w-full sm:w-auto h-16 md:h-20 px-12 text-lg md:text-xl rounded-full shadow-2xl font-black bg-primary hover:scale-105 transition-all uppercase">
-            <Link href="#packs">QUERO MINHAS FOTOS DE LUXO AGORA</Link>
+            <Link href="#packs">PEGAR MEUS PROMPTS</Link>
           </Button>
         </div>
 
@@ -44,7 +43,7 @@ export default function Home() {
 
         <div className="flex justify-center py-4">
           <Button asChild size="lg" className="w-full sm:w-auto h-16 md:h-20 px-12 text-lg md:text-xl rounded-full shadow-2xl font-black bg-primary hover:scale-105 transition-all uppercase">
-            <Link href="#packs">QUERO MINHAS FOTOS DE LUXO AGORA</Link>
+            <Link href="#packs">PEGAR MEUS PROMPTS</Link>
           </Button>
         </div>
 
@@ -72,7 +71,7 @@ export default function Home() {
         
         <div className="flex justify-center py-4">
           <Button asChild size="lg" className="w-full sm:w-auto h-16 md:h-20 px-12 text-lg md:text-xl rounded-full shadow-2xl font-black bg-primary hover:scale-105 transition-all uppercase">
-            <Link href="#packs">QUERO MINHAS FOTOS DE LUXO AGORA</Link>
+            <Link href="#packs">PEGAR MEUS PROMPTS</Link>
           </Button>
         </div>
 
