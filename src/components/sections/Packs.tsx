@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check, AlertTriangle } from 'lucide-react';
+import { Check, AlertTriangle, Clock } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import {
@@ -20,10 +20,11 @@ const packs = [
     description: "Transforme suas fotos comuns em imagens de alto impacto usando inteligência artificial.",
     image: PlaceHolderImages.find(img => img.id === 'pack-ostentacao')!,
     features: [
-      "+300 prompts premium",
-      "Estilo luxo e ostentação",
-      "Visual cinematográfico",
-      "Ideal para marketing e branding"
+      "300 prompts premium",
+      "Prompts estilo milionário",
+      "Prompts cinematográficos",
+      "Prompts para fotos de Instagram",
+      "Prompts para branding pessoal"
     ],
     price: "R$12,90",
     oldPrice: "R$97",
@@ -78,7 +79,7 @@ export function Packs() {
         <div className="flex flex-col items-center gap-2">
            <div className="bg-destructive/10 text-destructive px-6 py-2 rounded-full font-black text-sm md:text-base flex items-center gap-2 border border-destructive/20 animate-pulse">
              <AlertTriangle className="w-5 h-5" />
-             ⚠️ Oferta promocional pode sair do ar a qualquer momento.
+             ⚠️ O preço promocional pode sair do ar a qualquer momento.
            </div>
            <p className="text-lg md:text-2xl text-muted-foreground font-medium">O acesso que vai mudar sua presença digital.</p>
         </div>
@@ -157,7 +158,13 @@ function PackCard({ pack }: { pack: typeof packs[0] }) {
           <Button asChild className="w-full h-16 rounded-full font-black text-xl shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform uppercase bg-primary">
             <a href={pack.checkoutUrl}>QUERO ACESSO AGORA</a>
           </Button>
-          <p className="text-xs font-bold text-muted-foreground">Acesso imediato após pagamento.</p>
+          <div className="flex flex-col gap-1 items-center">
+            <p className="text-xs font-bold text-muted-foreground">Acesso liberado automaticamente após pagamento.</p>
+            <div className="flex items-center gap-1 text-[10px] text-primary/60 font-bold uppercase">
+              <Clock className="w-3 h-3" />
+              Oferta por tempo limitado
+            </div>
+          </div>
         </div>
       </CardFooter>
     </Card>

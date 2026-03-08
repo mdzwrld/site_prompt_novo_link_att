@@ -29,11 +29,11 @@ export function FinalCTA() {
         >
           <Link href="#packs">
             <Rocket className="w-8 h-8 md:w-10 md:h-10" />
-            QUERO ACESSO AGORA
+            QUERO MINHAS FOTOS DE LUXO AGORA
           </Link>
         </Button>
         <div className="space-y-1">
-          <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Satisfação Garantida ou seu Dinheiro de Volta</p>
+          <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest text-green-600">Satisfação Garantida ou seu Dinheiro de Volta</p>
           <div className="flex items-center justify-center gap-4 grayscale opacity-50">
             <span className="text-xs font-bold">PIX</span>
             <span className="text-xs font-bold">CARTÃO</span>
