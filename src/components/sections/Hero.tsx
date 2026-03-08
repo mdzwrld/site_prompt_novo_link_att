@@ -2,18 +2,11 @@
 "use client";
 
 import { Button } from '@/components/ui/button';
-import { ChevronRight, CheckCircle2 } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export function Hero() {
-  const benefits = [
-    "Fotos com aparência de luxo",
-    "Estética cinematográfica instantânea",
-    "Ideal para Instagram e branding pessoal",
-    "Resultado em segundos"
-  ];
-
   return (
     <section className="pt-8 md:pt-16 text-center max-w-5xl mx-auto flex flex-col items-center gap-6 md:gap-10">
       <div className="space-y-4 px-4">
@@ -28,15 +21,6 @@ export function Hero() {
             Basta copiar e colar os prompts.
           </p>
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 text-left max-w-3xl px-6">
-        {benefits.map((benefit, idx) => (
-          <div key={idx} className="flex items-center gap-3 bg-secondary/20 p-4 rounded-xl border border-primary/5">
-            <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
-            <span className="font-semibold text-sm md:text-base">{benefit}</span>
-          </div>
-        ))}
       </div>
 
       <div className="relative w-full max-w-[320px] md:max-w-md aspect-[9/14] rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/10 transition-transform hover:scale-[1.02] duration-500 mx-4">
